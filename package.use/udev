@@ -1,0 +1,6 @@
+dev-libs/libusb udev
+x11-base/xlibre-server udev
+x11-base/xorg-server udev
+sys-apps/systemd-utils udev
+dev-qt/qtgui udev
+dev-qt/qtbase:6 udev

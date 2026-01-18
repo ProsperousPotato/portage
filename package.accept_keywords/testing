@@ -1,0 +1,13 @@
+app-shells/zoxide ~amd64
+sys-kernel/linux-firmware ~amd64
+sys-kernel/gentoo-sources ~amd64
+x11-libs/gtk+ ~amd64
+media-gfx/nsxiv ~amd64
+dev-util/rocm-smi ~amd64
+net-libs/nodejs ~amd64
+dev-cpp/simdutf ~amd64
+dev-libs/simdjson ~amd64
+net-libs/nghttp2 ~amd64
+dev-util/rustup ~amd64
+app-mobilephone/scrcpy ~amd64
+www-client/glide-browser-bin ~amd64

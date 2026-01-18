@@ -1,0 +1,13 @@
+# Remove files that shall not be installed from this list.
+amdgpu/dimgrey_cavefish_ce.bin
+amdgpu/dimgrey_cavefish_dmcub.bin
+amdgpu/dimgrey_cavefish_me.bin
+amdgpu/dimgrey_cavefish_mec.bin
+amdgpu/dimgrey_cavefish_mec2.bin
+amdgpu/dimgrey_cavefish_pfp.bin
+amdgpu/dimgrey_cavefish_rlc.bin
+amdgpu/dimgrey_cavefish_sdma.bin
+amdgpu/dimgrey_cavefish_smc.bin
+amdgpu/dimgrey_cavefish_sos.bin
+amdgpu/dimgrey_cavefish_ta.bin
+amdgpu/dimgrey_cavefish_vcn.bin

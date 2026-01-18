@@ -1,0 +1,2 @@
+sys-apps/util-linux pam -udev
+sys-libs/libcap pam
