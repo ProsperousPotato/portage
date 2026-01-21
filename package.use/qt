@@ -1,1 +1,2 @@
 dev-qt/qtbase -dbus
+dev-libs/quazip qt6

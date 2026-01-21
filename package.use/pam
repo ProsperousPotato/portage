@@ -1,2 +1,1 @@
-sys-apps/util-linux pam -udev
-sys-libs/libcap pam
+sys-apps/util-linux -su

@@ -1,6 +1,6 @@
 app-shells/zoxide ~amd64
 sys-kernel/linux-firmware ~amd64
-sys-kernel/gentoo-sources ~amd64
+<=sys-kernel/gentoo-sources-6.18.5 ~amd64
 x11-libs/gtk+ ~amd64
 media-gfx/nsxiv ~amd64
 dev-util/rocm-smi ~amd64
