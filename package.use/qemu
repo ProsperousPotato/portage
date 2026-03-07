@@ -1,1 +1,2 @@
-app-emulation/qemu vhost-net alsa ncurses numa sdl virgl spice
+app-emulation/qemu vhost-net alsa ncurses numa sdl virgl spice usbredir nfs io-uring
+media-libs/virglrenderer venus
