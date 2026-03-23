@@ -1,5 +1,3 @@
 sys-firmware/intel-microcode intel-ucode 
 sys-kernel/linux-firmware linux-fw-redistributable 
 games-util/steam-launcher ValveSteamLicense 
-games-emulation/ppsspp JSON
-app-arch/unrar unRAR

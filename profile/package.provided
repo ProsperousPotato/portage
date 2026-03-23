@@ -2,3 +2,5 @@ dev-qt/qtdbus-5.15.18
 sys-apps/dbus-1.16.2
 app-accessibility/at-spi2-atk-2.38.0
 app-accessibility/at-spi2-core-2.56.5
+sys-libs/pam-1.7.2
+sys-auth/pambase-20251104

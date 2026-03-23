@@ -1,0 +1,6 @@
+app-arch/unzip natspec
+x11-libs/libXfont2 truetype
+media-gfx/imagemagick jpeg webp
+media-gfx/nsxiv exif
+media-video/ffmpeg dvd svg sdl xvid
+app-text/xmlto text

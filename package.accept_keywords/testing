@@ -1,14 +1,15 @@
-app-shells/zoxide ~amd64
-sys-kernel/linux-firmware ~amd64
-<=sys-kernel/gentoo-sources-6.18.5 ~amd64
-x11-libs/gtk+ ~amd64
-media-gfx/nsxiv ~amd64
-dev-util/rocm-smi ~amd64
-net-libs/nodejs ~amd64
-dev-cpp/simdutf ~amd64
-dev-libs/simdjson ~amd64
-net-libs/nghttp2 ~amd64
-dev-util/rustup ~amd64
-app-mobilephone/scrcpy ~amd64
-www-client/glide-browser-bin ~amd64
-www-client/icecat ~amd64
+app-shells/zoxide
+sys-kernel/linux-firmware
+sys-kernel/gentoo-sources
+x11-libs/gtk+
+media-gfx/nsxiv
+dev-util/rocm-smi
+net-libs/nodejs
+dev-cpp/simdutf
+dev-libs/simdjson
+net-libs/nghttp2
+app-mobilephone/scrcpy
+www-client/glide-browser-bin
+www-client/icecat
+dev-vcs/gitui
+app-misc/onefetch

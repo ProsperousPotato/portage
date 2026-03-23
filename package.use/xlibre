@@ -1,2 +1,2 @@
-x11-base/xlibre-server -minimal xvfb
-x11-base/xorg-server::xlibre -minimal xvfb
+x11-base/xlibre-server -minimal xvfb udev
+x11-base/xorg-server::xlibre -minimal xvfb udev
