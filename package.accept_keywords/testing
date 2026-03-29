@@ -13,3 +13,4 @@ www-client/glide-browser-bin
 www-client/icecat
 dev-vcs/gitui
 app-misc/onefetch
+app-emulation/virt-firmware
