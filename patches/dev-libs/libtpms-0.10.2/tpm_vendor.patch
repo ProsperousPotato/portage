@@ -1,0 +1,22 @@
+diff '--color=auto' -ruN a/src/tpm2/VendorInfo.c b/src/tpm2/VendorInfo.c
+--- a/src/tpm2/VendorInfo.c	2026-01-02 15:56:41.000000000 +0000
++++ b/src/tpm2/VendorInfo.c	2026-04-05 21:00:46.384733413 +0100
+@@ -68,13 +68,13 @@
+ #include "Platform.h"
+ 
+ // In this sample platform, these are compile time constants, but are not required to be.
+-#define MANUFACTURER    "IBM"
+-#define VENDOR_STRING_1 "SW  "
+-#define VENDOR_STRING_2 " TPM"
++#define MANUFACTURER    "INTC"
++#define VENDOR_STRING_1 "INTC"
++#define VENDOR_STRING_2 "\0\0\0\0"
+ #define VENDOR_STRING_3 "\0\0\0\0"
+ #define VENDOR_STRING_4 "\0\0\0\0"
+-#define FIRMWARE_V1     (0x20240125)
+-#define FIRMWARE_V2     (0x00120000)
++#define FIRMWARE_V1     (0x02580012)
++#define FIRMWARE_V2     (0x002009A9)
+ #define MAX_SVN         255
+ 
+ #if SIMULATION	// libtpms added
