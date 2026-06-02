@@ -1,0 +1,4 @@
+app-editors/neovim
+dev-lua/luv
+dev-libs/tree-sitter-query
+dev-libs/tree-sitter-vim
