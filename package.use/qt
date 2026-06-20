@@ -1,2 +1,3 @@
-dev-qt/qtbase -dbus
-dev-libs/quazip qt6
+dev-qt/qtbase dbus -sql -sqlite
+dev-qt/qttools -widgets
+dev-qt/qtmultimedia -v4l

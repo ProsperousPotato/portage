@@ -1,0 +1,37 @@
+#include <stdint.h>
+#include <stddef.h>
+
+size_t PADDING_X = 50;
+size_t PADDING_Y = 50;
+size_t PADDING_TEXT_X = 10;
+size_t PADDING_TEXT_Y = 10;
+char *FONT = "Terminus:pixelsize=12";
+
+
+enum corners { TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT};
+#define CORNER BOTTOM_RIGHT
+enum focus_monitor { FOCUS_MOUSE, FOCUS_KEYBOARD };
+#define FOCUS_MONITOR FOCUS_MOUSE
+
+/* options for normal normal urgency */
+char *NORMAL_FONT_COLOR = "gray90";
+char *NORMAL_BACKGROUND = "#000000";
+char *NORMAL_BORDER = "#FF8700";
+size_t NORMAL_BORDER_SIZE = 2;
+size_t NORMAL_TIME = 4;
+
+
+/* options for normal low urgency */
+char *LOW_FONT_COLOR = "gray90";
+char *LOW_BACKGROUND = "#000000";
+char *LOW_BORDER = "#bbbbbb";
+size_t LOW_BORDER_SIZE = 2;
+size_t LOW_TIME = 2;
+
+
+/* options for normal urgent urgency */
+char *URGENT_FONT_COLOR = "gray90";
+char *URGENT_BACKGROUND = "#770000";
+char *URGENT_BORDER = "#770000";
+size_t URGENT_BORDER_SIZE = 2;
+size_t URGENT_TIME = 8;

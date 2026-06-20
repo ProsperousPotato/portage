@@ -1,1 +1,1 @@
-net-libs/nodejs -npm -inspector -system-icu
+net-libs/nodejs -npm -inspector icu
