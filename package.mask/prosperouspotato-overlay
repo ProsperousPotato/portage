@@ -1,0 +1,18 @@
+# Don't install systemd-utils
+sys-apps/systemd-utils
+
+# Don't install a sound server
+media-sound/pulseaudio-daemon
+media-video/pipewire
+media-sound/jack
+media-sound/jack2
+
+# Don't install elogind
+sys-apps/elogind
+
+# Don't install binary rust
+dev-lang/rust-bin
+
+# Install gtk+ without dbus
+x11-libs/gtk+::gentoo
+>dev-libs/atk-2.38.0

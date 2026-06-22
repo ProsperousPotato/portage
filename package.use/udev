@@ -1,4 +1,2 @@
-dev-libs/libusb udev
-sys-apps/systemd-utils udev
 dev-qt/qtgui udev
 dev-qt/qtbase:6 udev

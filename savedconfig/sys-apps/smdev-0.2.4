@@ -1,0 +1,143 @@
+/* See LICENSE file for copyright and license details. */
+struct rule {
+	const char *devregex;
+	const char *user;
+	const char *group;
+	int mode;
+	const char *path;
+	const char *cmd;
+} rules[] = {
+
+	/* based on mdev-like-a-boss */
+
+	{ "null",            "root", "root",   0666, NULL,      NULL },
+	{ "zero",            "root", "root",   0666, NULL,      NULL },
+	{ "full",            "root", "root",   0666, NULL,      NULL },
+	{ "random",          "root", "root",   0666, NULL,      NULL },
+	{ "urandom",         "root", "root",   0666, NULL,      NULL },
+	{ "hwrng",           "root", "root",   0600, NULL,      NULL },
+	{ "hwrandom",        "root", "root",   0444, NULL,      NULL },
+	{ "grsec",           "root", "root",   0660, NULL,      NULL },
+
+	/* kvm */
+	{ "kvm",             "root", "kvm",    0660, NULL,      NULL },
+	{ "vhost-net",       "root", "kvm",    0660, NULL,      NULL },
+	{ "udmabuf",         "root", "kvm",    0660, NULL,      NULL },
+	{ "vfio",            "root", "root",   0755, NULL,      NULL },
+	{ "vfio/vfio",       "root", "root",   0666, "=vfio/",  NULL },
+	{ "vfio/[0-9].*",    "root", "kvm",    0660, "=vfio/",  NULL },
+	{ "tpm0",            "root", "kvm",    0660, NULL,      NULL },
+	{ "tpmrm0",          "root", "kvm",    0660, NULL,      NULL },
+
+	/* tty stuff */
+	{ "tty",             "root", "tty",    0666, NULL,      NULL },
+	{ "tty[0-9]*",       "root", "tty",    0660, NULL,      NULL },
+	{ "vcs",             "root", "tty",    0660, NULL,      NULL },
+	{ "vcs[0-9]*",       "root", "tty",    0660, NULL,      NULL },
+	{ "vcsa",            "root", "tty",    0660, NULL,      NULL },
+	{ "vcsa[0-9]*",      "root", "tty",    0660, NULL,      NULL },
+	{ "vcsu",            "root", "tty",    0660, NULL,      NULL },
+	{ "vcsu[0-9]*",      "root", "tty",    0660, NULL,      NULL },
+	{ "ttyS[0-9]*",      "root", "dialout",0660, NULL,      NULL },
+
+	/* block devices */
+	{ "ram([0-9]*)",     "root", "disk",   0660, ">rd/",    NULL },
+	{ "loop([0-9]+)",    "root", "disk",   0660, ">loop/",  NULL },
+	{ "loop-control",    "root", "disk",   0660, NULL,      NULL },
+	{ "sd[a-z].*",       "root", "disk",   0660, NULL,      NULL },
+	{ "vd[a-z].*",       "root", "disk",   0660, NULL,      NULL },
+	{ "hd[a-z].*",       "root", "disk",   0660, NULL,      NULL },
+	/* nvme0/nvme1: char control devices; nvme0n1 block devices; */
+	{ "nvme[0-9]+",      "root", "disk",   0660, NULL,      NULL },
+	{ "nvme[0-9]+n[0-9]+.*", "root", "disk", 0660, NULL,    NULL },
+	{ "ng[0-9]+n[0-9]+", "root", "disk",   0660, NULL,      NULL },
+	{ "md[0-9]*",        "root", "disk",   0660, NULL,      NULL },
+	{ "dm-[0-9]*",       "root", "disk",   0660, NULL,      NULL },
+	{ "bcache[0-9]*",    "root", "disk",   0660, NULL,      NULL },
+	{ "mmcblk[0-9].*",   "root", "disk",   0660, NULL,      NULL },
+	{ "sr[0-9]*",        "root", "cdrom",  0660, NULL,      "@ln -sf $SMDEV /dev/cdrom" },
+	{ "fd[0-9]*",        "root", "floppy", 0660, NULL,      NULL },
+	{ "bsg/.*",          "root", "disk",   0660, NULL,      NULL },
+
+	/* raid controllers */
+	{ "cciss!(.*)",      "root", "disk",   0660, "=cciss/", NULL },
+	{ "ida!(.*)",        "root", "disk",   0660, "=ida/",   NULL },
+	{ "rd!(.*)",         "root", "disk",   0660, "=rd/",    NULL },
+
+	/* tun/tap */
+	{ "net/tun[0-9]*",   "root", "kvm",    0660, NULL,      NULL },
+	{ "net/tap[0-9]*",   "root", "root",   0600, NULL,      NULL },
+
+	/* alsa */
+	{ "snd/.*",          "root", "audio",  0660, "=snd/",   NULL },
+	{ "midi.*",          "root", "audio",  0660, "=snd/",   NULL },
+	{ "seq",             "root", "audio",  0660, "=snd/",   NULL },
+	{ "timer",           "root", "audio",  0660, "=snd/",   NULL },
+	{ "adsp",            "root", "audio",  0660, ">sound/", NULL },
+	{ "audio",           "root", "audio",  0660, ">sound/", NULL },
+	{ "dsp",             "root", "audio",  0660, ">sound/", NULL },
+	{ "mixer",           "root", "audio",  0660, ">sound/", NULL },
+	{ "sequencer.*",     "root", "audio",  0660, ">sound/", NULL },
+
+	/* fuse */
+	{ "fuse",            "root", "root",   0666, NULL,      NULL },
+
+	/* gpu */
+	{ "card[0-9]",       "root", "video",  0660, "=dri/",   NULL },
+	{ "dri/renderD128",  "root", "render", 0666, "=dri/",   NULL },
+	{ "dri/.*",          "root", "video",  0660, "=dri/",   NULL },
+	{ "kfd",             "root", "render", 0666, NULL,      NULL },
+	{ "drm_dp_aux[0-9]*","root", "video",  0660, NULL,      NULL },
+	{ "fb[0-9]*",        "root", "video",  0660, NULL,      NULL },
+
+	/* misc */
+	{ "kmem",            "root", "kmem",   0640, NULL,      NULL },
+	{ "mem",             "root", "kmem",   0640, NULL,      NULL },
+	{ "port",            "root", "kmem",   0640, NULL,      NULL },
+	{ "console",         "root", "tty",    0600, NULL,      NULL },
+	{ "ptmx",            "root", "tty",    0666, NULL,      NULL },
+	{ "pty.*",           "root", "tty",    0660, NULL,      NULL },
+
+	{ "agpgart",         "root", "root",   0660, ">misc/",  NULL },
+	{ "psaux",           "root", "root",   0660, ">misc/",  NULL },
+	{ "rtc",             "root", "root",   0664, ">misc/",  NULL },
+	{ "rtc[0-9]*",       "root", "root",   0664, NULL,      NULL },
+	{ "hpet",            "root", "root",   0664, NULL,      NULL },
+	{ "nvram",           "root", "root",   0660, NULL,      NULL },
+	{ "pps[0-9]*",       "root", "root",   0660, NULL,      NULL },
+	{ "ptp[0-9]*",       "root", "root",   0660, NULL,      NULL },
+	{ "gpiochip[0-9]*",  "root", "root",   0660, NULL,      NULL },
+	{ "ntsync",          "root", "root",   0666, NULL,      NULL },
+	{ "userfaultfd",     "root", "root",   0600, NULL,      NULL },
+	{ "cpu_dma_latency", "root", "root",   0660, NULL,      NULL },
+	{ "vga_arbiter",     "root", "root",   0660, NULL,      NULL },
+	{ "uinput",          "root", "root",   0660, NULL,      NULL },
+	{ "dma_heap/.*",     "root", "root",   0666, NULL,      NULL },
+
+	/* i2c */
+	{ "i2c-[0-9]+",      "root", "root",   0660, NULL,      NULL },
+
+	/* input */
+	{ "ts[0-9]+",        "root", "root",   0640, "=input/", NULL },
+	{ "input/.*",        "root", "input",  0660, "=input/", NULL },
+	{ "hiddev[0-9]+",    "root", "root",   0660, NULL,      NULL },
+	{ "hidraw[0-9]+",    "root", "root",   0660, NULL,      NULL },
+
+	/* v4l / video */
+	{ "vbi[0-9]",        "root", "video",  0660, ">v4l/",   NULL },
+	{ "video[0-9]",      "root", "video",  0660, ">v4l/",   NULL },
+	{ "dvb.*",           "root", "video",  0660, NULL,      NULL },
+
+	/* usb */
+	{ "bus/usb/.*",      "root", "usb",    0664, NULL,      NULL },
+	{ "usbdev[0-9].[0-9]*", "root", "root", 0660, NULL,     "!" },
+
+	/* avoid creating bogus x:x:x:x device nodes that look like /dev/dm-* */
+	{ "[0-9]+:[0-9]+:[0-9]+:[0-9]+", "root", "root", 0660, NULL, "!" },
+
+	/* shared memory */
+	{ "shm",             "root", "root",   1777, NULL,      NULL },
+
+	/* catchall */
+	{ ".*",              "root", "root",   0660, NULL,      NULL },
+};
