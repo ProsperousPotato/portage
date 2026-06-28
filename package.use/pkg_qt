@@ -1,3 +1,5 @@
 dev-qt/qtbase dbus -sql -sqlite
 dev-qt/qttools -widgets
 dev-qt/qtmultimedia -v4l
+dev-qt/qtgui udev
+dev-qt/qtbase:6 udev

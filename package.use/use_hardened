@@ -1,0 +1,4 @@
+llvm-core/clang-common hardened
+sys-devel/binutils hardened
+sys-devel/gcc hardened
+media-gfx/imagemagick hardened

@@ -1,0 +1,2 @@
+net-fs/samba client -system-mitkrb5
+net-libs/ngtcp2 gnutls

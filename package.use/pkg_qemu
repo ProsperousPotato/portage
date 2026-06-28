@@ -1,0 +1,2 @@
+app-emulation/qemu vhost-net alsa ncurses numa sdl virgl usbredir nfs io-uring usb
+media-libs/virglrenderer venus

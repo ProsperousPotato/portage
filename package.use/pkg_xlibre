@@ -1,0 +1,2 @@
+x11-base/xlibre-server -minimal udev xinerama xcsecurity -xvfb
+x11-base/xorg-server::xlibre -minimal udev xinerama xcsecurity -xvfb

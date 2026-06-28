@@ -65,7 +65,8 @@ struct rule {
 	{ "rd!(.*)",         "root", "disk",   0660, "=rd/",    NULL },
 
 	/* tun/tap */
-	{ "net/tun[0-9]*",   "root", "kvm",    0660, NULL,      NULL },
+	{ "tun",             "root", "netdev", 0660, NULL,      NULL },
+	{ "net/tun[0-9]*",   "root", "netdev", 0660, NULL,      NULL },
 	{ "net/tap[0-9]*",   "root", "root",   0600, NULL,      NULL },
 
 	/* alsa */

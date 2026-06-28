@@ -1,2 +1,0 @@
-sys-apps/iproute2 -minimal
-net-libs/gnutls pkcs11 tools

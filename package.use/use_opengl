@@ -1,0 +1,9 @@
+app-emulation/qemu opengl 
+app-misc/fastfetch opengl 
+dev-qt/qtbase opengl 
+dev-qt/qttools opengl 
+media-libs/libcaca opengl 
+media-libs/libplacebo opengl 
+media-libs/libsdl2 opengl 
+media-libs/libwebp opengl 
+x11-misc/slop opengl 

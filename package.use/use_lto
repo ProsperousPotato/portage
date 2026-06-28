@@ -1,0 +1,3 @@
+dev-lang/rust lto
+net-libs/nodejs lto
+sys-devel/gcc lto

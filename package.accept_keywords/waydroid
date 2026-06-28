@@ -1,0 +1,7 @@
+app-containers/waydroid-x11
+app-containers/waydroid
+dev-python/pyclip
+dev-python/gbinder
+dev-libs/libglibutil
+dev-libs/gbinder
+sys-libs/libcap
